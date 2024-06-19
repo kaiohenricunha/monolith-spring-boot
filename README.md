@@ -158,18 +158,35 @@ OpenJDK 64-Bit Server VM (build 17+35-2724, mixed mode, sharing)
 - **Justificativa**: Demonstrar ambos os métodos GET e POST para cada operação.
 
 ````bash
- kcunha@BR-4CG1QW3  /mnt/c/Users/kaio.cunha  cd projects/git/kaiohenricunha/monolith-spring-boot
- kcunha@BR-4CG1QW3  /mnt/c/Users/kaio.cunha/projects/git/kaiohenricunha/monolith-spring-boot  curl -X GET "http://localhost:8080/api/add?a=5&b=3"
-8%                                                                                                                                    kcunha@BR-4CG1QW3  /mnt/c/Users/kaio.cunha/projects/git/kaiohenricunha/monolith-spring-boot  curl -X POST "http://localhost:8080/api/add" -H "Content-Type: application/json" -d '{"a": 5, "b": 3}'
-8%                                                                                                                                    kcunha@BR-4CG1QW3  /mnt/c/Users/kaio.cunha/projects/git/kaiohenricunha/monolith-spring-boot  curl -X GET "http://localhost:8080/api/subtract?a=5&b=3"
-2%                                                                                                                                    kcunha@BR-4CG1QW3  /mnt/c/Users/kaio.cunha/projects/git/kaiohenricunha/monolith-spring-boot  curl -X POST "http://localhost:8080/api/subtract" -H "Content-Type: application/json" -d '{"a": 5, "b": 3}'
-2%
- kcunha@BR-4CG1QW3  /mnt/c/Users/kaio.cunha/projects/git/kaiohenricunha/monolith-spring-boot  curl -X GET "http://localhost:8080/api/multiply?a=5&b=3"
-15%
- kcunha@BR-4CG1QW3  /mnt/c/Users/kaio.cunha/projects/git/kaiohenricunha/monolith-spring-boot  curl -X GET "http://localhost:8080/api/divide?a=6&b=3"
-2%
- kcunha@BR-4CG1QW3  /mnt/c/Users/kaio.cunha/projects/git/kaiohenricunha/monolith-spring-boot  curl -X POST "http://localhost:8080/api/divide" -H "Content-Type: application/json" -d '{"a": 6, "b": 3}'
-2%
+curl -X GET "http://localhost:8080/api/add?a=5&b=3"
+# 8
+
+curl -X POST "http://localhost:8080/api/add" -H "Content-Type: application/json" -d '{"a": 5, "b": 3}'
+# 8
+
+curl -X GET "http://localhost:8080/api/subtract?a=5&b=3"
+# 2
+
+curl -X POST "http://localhost:8080/api/subtract" -H "Content-Type: application/json" -d '{"a": 5, "b": 3}'
+# 2
+
+curl -X GET "http://localhost:8080/api/multiply?a=5&b=3"
+# 15
+
+curl -X POST "http://localhost:8080/api/multiply" -H "Content-Type: application/json" -d '{"a": 5, "b": 3}'
+# 15
+
+curl -X GET "http://localhost:8080/api/divide?a=6&b=3"
+# 2
+
+curl -X POST "http://localhost:8080/api/divide" -H "Content-Type: application/json" -d '{"a": 6, "b": 3}'
+# 2
+
+curl -X GET "http://localhost:8080/api/exponentiate?a=2&b=3"
+# 8
+
+curl -X POST "http://localhost:8080/api/exponentiate" -H "Content-Type: application/json" -d '{"a": 2, "b": 3}'
+# 8
 ```
 
 ### 2. Entrega e Formato do Relatório
