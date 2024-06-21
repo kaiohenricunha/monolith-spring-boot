@@ -54,7 +54,7 @@ public class ProductController {
         return productRepository.findById(id)
                 .map(product -> {
                     productRepository.delete(product);
-                    return ResponseEntity.noContent().build();
+                    return ResponseEntity.noContent().<Void>build();
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
