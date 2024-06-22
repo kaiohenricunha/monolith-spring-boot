@@ -127,3 +127,39 @@ curl -X GET http://localhost:8080/api/courses/cache/1
 ```sh
 curl -X DELETE http://localhost:8080/api/courses/cache/1
 ```
+
+## Instruções para Execução do Projeto "Employee" - AT
+
+### Gerar o JAR Executável e Configurar o Docker
+
+1. **Gerar o JAR Executável**:
+    ```sh
+    mvn clean package
+    ```
+
+    O JAR gerado estará no diretório `target/` com o nome `monolith-spring-boot-0.0.1-SNAPSHOT.jar`.
+
+2. **Executar a Aplicação com Docker**:
+    - **Parar os containers MongoDB e Redis existentes** (se necessário):
+      ```sh
+      docker stop mongodb redis
+      docker rm mongodb redis
+      ```
+    - **Construir e iniciar os containers**:
+      ```sh
+      sudo docker-compose up --build
+      ```
+
+    A aplicação estará disponível em `http://localhost:8080`.
+
+### Testar os Endpoints no Postman
+
+1. **Importar a Coleção Postman**:
+   - Abra o Postman.
+   - Vá até "Importar".
+   - Selecione o arquivo JSON da coleção "SpringBootApp API Tests" disponível no repositório.
+
+2. **Executar os Testes**:
+   - Certifique-se de que os containers Docker estão rodando (`app`, `mongodb`, `redis`).
+   - Utilize a coleção Postman importada para executar os testes dos endpoints. A coleção inclui testes para todas as funcionalidades implementadas na aplicação.
+
